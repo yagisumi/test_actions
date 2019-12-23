@@ -10,13 +10,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@master
-      - name: hello
-        run: .\test.bat
       - name: build
-        run: |
-          md test
-          echo TEST> test\test.txt
-          7z.exe a -tzip test.zip test
+        run: .\test.bat
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
