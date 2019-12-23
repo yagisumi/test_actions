@@ -2,7 +2,7 @@ name: test
 on:
   push:
     tags:
-      - *
+      - "*"
 jobs:
   test:
     name: Release Test
