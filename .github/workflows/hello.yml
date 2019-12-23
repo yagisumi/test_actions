@@ -1,8 +1,6 @@
 name: hello
 on:
   push:
-    tags:
-      - "!*"
 jobs:
   hello:
     name: No Tags Test
