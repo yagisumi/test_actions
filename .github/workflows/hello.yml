@@ -1,0 +1,21 @@
+name: hello
+on:
+  push:
+    tags:
+      - "!*"
+jobs:
+  hello:
+    name: No Tags Test
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: test
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86
+        shell: cmd
+      - name: hello
+        run: |
+          echo hello
+          cl
+        shell: cmd
