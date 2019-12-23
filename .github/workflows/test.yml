@@ -9,6 +9,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
+      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+
       - name: test
         id: git_describe
         run: git describe
