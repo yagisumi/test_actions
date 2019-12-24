@@ -9,12 +9,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
-      - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-
       - name: test
-        id: git_describe
-        run: git describe
+        run: .\test.bat ${{ github.ref.replace(/refs\/tags\//, '') }}
 
-      - name: build
+      - name: if_tag
+        if: contains(github.ref, 'tags/v')
+        run: .\test.bat have_tag
+
+      - name: test2
         run: .\test.bat
-
