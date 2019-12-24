@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: test
-        run: .\test.bat ${{ github.ref.replace(/refs\/tags\//, '') }}
+        run: .\test.bat ${{ github.ref }}
 
       - name: if_tag
         if: contains(github.ref, 'tags/v')
